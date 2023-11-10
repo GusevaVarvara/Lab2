@@ -5,15 +5,13 @@
 #include "Character.h"
 
 void displayAvailableOptions() {
-    // Вывести информацию о доступных расах
-    std::cout << "Доступные расы:\n";
+    std::cout << "Р”РѕСЃС‚СѓРїРЅС‹Рµ СЂР°СЃС‹:\n";
     const std::vector<Race>& races = Race::getAvailableRaces();
     for (const Race& race : races) {
         std::cout << race.getName() << ": " << race.getDescription() << "\n";
     }
 
-    // Вывести информацию о доступных классах
-    std::cout << "\nДоступные классы:\n";
+    std::cout << "\nР”РѕСЃС‚СѓРїРЅС‹Рµ РєР»Р°СЃСЃС‹:\n";
     const std::vector<Class>& classes = Class::getAvailableClasses();
     for (const Class& characterClass : classes) {
         std::cout << characterClass.getName() << ": " << characterClass.getDescription() << "\n";
@@ -24,29 +22,27 @@ int main() {
 
     setlocale(LC_ALL, "Russian");
 
-    // Инициализировать доступные расы и классы
     Race::initializeAvailableRaces();
     Class::initializeAvailableClasses();
 
-    // Вывести информацию о доступных опциях
     displayAvailableOptions();
 
-    // Позволить игроку выбрать расу и класс
+
     std::string chosenRace, chosenClass;
-    std::cout << "\nВыберите расу для вашего персонажа: ";
+    std::cout << "\nР’С‹Р±РµСЂРёС‚Рµ СЂР°СЃСѓ РґР»СЏ РІР°С€РµРіРѕ РїРµСЂСЃРѕРЅР°Р¶Р°: ";
     std::cin >> chosenRace;
 
-    std::cout << "Выберите класс для вашего персонажа: ";
+    std::cout << "Р’С‹Р±РµСЂРёС‚Рµ РєР»Р°СЃСЃ РґР»СЏ РІР°С€РµРіРѕ РїРµСЂСЃРѕРЅР°Р¶Р°: ";
     std::cin >> chosenClass;
 
     Race chosenRaceObj = Race::createRace(chosenRace);
     Class chosenClassObj = Class::createClass(chosenClass);
 
-    Character playerCharacter("Игрок", chosenRaceObj, chosenClassObj);
+    Character playerCharacter("РРіСЂРѕРє", chosenRaceObj, chosenClassObj);
 
-    std::cout << "\nВаш персонаж:\n";
-    std::cout << "Раса: " << playerCharacter.getRace().getName() << "\n";
-    std::cout << "Класс: " << playerCharacter.getClass().getName() << "\n";
+    std::cout << "\nР’Р°С€ РїРµСЂСЃРѕРЅР°Р¶:\n";
+    std::cout << "Р Р°СЃР°: " << playerCharacter.getRace().getName() << "\n";
+    std::cout << "РљР»Р°СЃСЃ: " << playerCharacter.getClass().getName() << "\n";
 
     return 0;
 }
