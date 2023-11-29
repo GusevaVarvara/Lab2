@@ -1,13 +1,17 @@
-#include "Character.h"
+#include "character.h"
 
-Character::Character(const std::string& name, const Race& race, const Class& characterClass)
-    : name(name), race(race), characterClass(characterClass) {
+Character::Character(const std::string& name, int initialHealth)
+    : name(name), health(initialHealth) {}
+
+void Character::displayInfo() const {
+    std::cout << "Character Name: " << name << "\n";
+    std::cout << "Health: " << health << "\n";
 }
 
-const Race& Character::getRace() const {
-    return race;
+int Character::getHealth() const {
+    return health;
 }
 
-const Class& Character::getClass() const {
-    return characterClass;
+void Character::setHealth(int newHealth) {
+    health = newHealth;
 }
