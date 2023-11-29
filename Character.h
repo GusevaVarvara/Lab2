@@ -9,6 +9,8 @@ public:
 
     virtual void displayInfo() const;
 
+    virtual void takeDamage(int damage);
+    virtual void heal(int amount);
     int getHealth() const;
     void setHealth(int newHealth);
 
@@ -16,3 +18,4 @@ private:
     std::string name;
     int health;
 };
+
