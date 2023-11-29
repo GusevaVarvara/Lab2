@@ -8,6 +8,17 @@ void Character::displayInfo() const {
     std::cout << "Health: " << health << "\n";
 }
 
+void Character::takeDamage(int damage) {
+    health -= damage;
+    if (health < 0) {
+        health = 0;
+    }
+}
+
+void Character::heal(int amount) {
+    health += amount;
+}
+
 int Character::getHealth() const {
     return health;
 }
