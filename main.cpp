@@ -4,6 +4,7 @@
 #include "class.h"
 #include "enemy.h" 
 #include "pet.h" 
+#include "Combat.h" 
 
 
 void displayAvailableOptions() {
@@ -73,7 +74,16 @@ int main() {
 
     std::cout << "\nВаш враг: " << chosenEnemyObj.getName() << "\n" << chosenEnemyObj.getDescription() << "\n";
 
+    std::vector<Character> players;
+    Character player1("Игрок");
+    players.push_back(player1);
+    players.push_back(chosenEnemyObj);
+    players.push_back(chosenPetObj);
+
+    Combat combat(players, chosenEnemyObj, chosenPetObj);
+    TurnSystem turnSystem(players);
+
+    combat.startCombat();
 
     return 0;
 }
-
