@@ -1,17 +1,18 @@
 #pragma once
 
+#include <iostream>
 #include <string>
-#include "Race.h"
-#include "Class.h"
 
 class Character {
 public:
-    Character(const std::string& name, const Race& race, const Class& characterClass);
-    const Race& getRace() const;
-    const Class& getClass() const;
+    Character(const std::string& name, int initialHealth = 100);
+
+    virtual void displayInfo() const;
+
+    int getHealth() const;
+    void setHealth(int newHealth);
 
 private:
     std::string name;
-    Race race;
-    Class characterClass;
+    int health;
 };
