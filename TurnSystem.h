@@ -15,35 +15,3 @@ private:
 };
 
 
-
-/*
-#pragma once
-
-#include <vector>
-
-class TurnSystem {
-private:
-    std::vector<std::string> players;  // Список игроков
-    int currentPlayerIndex;             // Индекс текущего игрока
-    int roundCount;                     // Счетчик раундов
-
-public:
-    // Конструктор
-    TurnSystem();
-
-    // Метод для начала новой игры
-    void startNewGame();
-
-    // Метод для переключения хода на следующего игрока
-    void nextTurn();
-
-    // Метод для проверки условий завершения игры
-    bool checkGameEnd();
-
-    // Метод для отправки сообщений игрокам
-    void sendMessage(const std::string& message);
-
-    // Метод для уведомления игроков
-    void notifyPlayers();
-};
-*/
