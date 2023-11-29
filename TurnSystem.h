@@ -1,17 +1,20 @@
 #pragma once
+
 #include <vector>
-#include <string>
+#include "character.h"
 
 class TurnSystem {
 public:
-    TurnSystem(const std::vector<std::string>& players);
+    TurnSystem(const std::vector<Character>& players);
 
-    const std::string& getCurrentPlayer() const;
+    const Character& getCurrentPlayer() const;
     void nextTurn();
 
 private:
-    std::vector<std::string> playerList;
-    std::vector<std::string>::const_iterator currentPlayer;
+    const std::vector<Character>& players;
+    size_t currentPlayerIndex;
 };
+
+
 
 
