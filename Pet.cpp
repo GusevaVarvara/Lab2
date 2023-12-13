@@ -3,8 +3,8 @@
 
 std::vector<Pet> Pet::availablePets;
 
-Pet::Pet(const std::string& name, const std::string& petname, const std::string& description, int fixedDamage)
-    : Character(name, 100, fixedDamage), petname(petname), description(description) {}
+Pet::Pet(const std::string& name, const std::string& description, int fixedDamage)
+    : Character(name, 100, fixedDamage), description(description) {}
 
 void Pet::addAvailablePets(const Pet& pet) {
     availablePets.push_back(pet);
@@ -12,17 +12,17 @@ void Pet::addAvailablePets(const Pet& pet) {
 
 void Pet::initializeAvailablePets() {
 
-    Pet pseudodragon("Питомец", "Pseudodragon", " Псевдодраконы - это небольшие существа, похожие на драконов, с переливающейся чешуей, летучими мышцеподобными крыльями "
+    Pet pseudodragon("Pseudodragon", " Псевдодраконы - это небольшие существа, похожие на драконов, с переливающейся чешуей, летучими мышцеподобными крыльями "
                                "и длинным хвостом. Их отличает игривость и высокий уровень интеллекта.Несмотря на свою драконью внешность, "
                                "они относительно небольшие и часто служат магическими спутниками заклинателей.", 4);
 
 
-    Pet BlinkDog("Питомец", "Blink-Dog", " Мерцающие собаки - это среднеразмерные, интеллектуальные собаки с гладкой сине-серой шерстью. У них есть способность "
+    Pet BlinkDog("Blink-Dog", " Мерцающие собаки - это среднеразмерные, интеллектуальные собаки с гладкой сине-серой шерстью. У них есть способность "
                            "телепортироваться на короткие расстояния, что делает их отличными охотниками и стражами. Известны своей преданностью, их часто "
                            "выбирают компаньонами для приключений.", 5);
 
 
-    Pet FeyPanther("Питомец", "Fey-Panther", "Фейские пантеры - это мистические, магические большие кошки с яркой, этерической шерстью. Эти существа не являются "
+    Pet FeyPanther("Fey-Panther", "Фейские пантеры - это мистические, магические большие кошки с яркой, этерической шерстью. Эти существа не являются "
                                    "настоящими пантерами, а фейскими существами, принимающими облик больших, величественных кошек. Ловкие и незаметные, их "
                                    "часто выбирают компаньонами для тех, кто путешествует по волшебным или иным мирам.", 6);
 
@@ -38,10 +38,6 @@ const std::vector<Pet>& Pet::getAvailablePets() {
     return availablePets;
 }
 
-const std::string& Pet::getName() const {
-    return petname;
-}
-
 const std::string& Pet::getDescription() const {
     return description;
 }
@@ -55,5 +51,6 @@ Pet Pet::createPet(const std::string& petName) {
             return pet;
         }
     }
-    return Pet("?", "?", "Недоступный питомец", 0);
+    return Pet("?", "Недоступный питомец", 0);
 }
+
