@@ -5,11 +5,10 @@
 
 class Pet : public Character {
 public:
-    Pet(const std::string& name, const std::string& petname, const std::string& description, int fixedDamage);
+    Pet(const std::string& name, const std::string& description, int fixedDamage);
 
     void addAvailablePets(const Pet& pet);
 
-    const std::string& getName() const;
     const std::string& getDescription() const;
     static const std::vector<Pet>& getAvailablePets();
     static void initializeAvailablePets();
@@ -17,8 +16,6 @@ public:
 
 private:
     std::string description;
-    std::string name;
-    std::string petname;
     static std::vector<Pet> availablePets;
 };
 
