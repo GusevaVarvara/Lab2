@@ -1,12 +1,8 @@
 #include "character.h"
 
-Character::Character(const std::string& name, int initialHealth)
-    : name(name), health(initialHealth) {}
+Character::Character(const std::string& name, int health, int fixedDamage)
+    : name(name), health(health), fixedDamage(fixedDamage) {}
 
-void Character::displayInfo() const {
-    std::cout << "Character Name: " << name << "\n";
-    std::cout << "Health: " << health << "\n";
-}
 
 void Character::takeDamage(int damage) {
     health -= damage;
@@ -15,14 +11,22 @@ void Character::takeDamage(int damage) {
     }
 }
 
-void Character::heal(int amount) {
-    health += amount;
-}
-
 int Character::getHealth() const {
     return health;
 }
 
-void Character::setHealth(int newHealth) {
-    health = newHealth;
+int Character::getDamage() const {
+    return fixedDamage;
+}
+
+const std::string& Character::getName() const {
+    return name;
+}
+
+void Character::addItem(const Item& item) {
+    health += item.getHealthBonus();
+    fixedDamage += item.getDamageBonus();
+
+    std::cout << "Бонус к здоровью: " << item.getHealthBonus() << "\n";
+    std::cout << "Бонус к наносимому урону: " << item.getDamageBonus() << "\n";
 }
