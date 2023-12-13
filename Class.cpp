@@ -3,7 +3,7 @@
 std::vector<Class> Class::availableClasses;
 
 Class::Class(const std::string& name, const std::string& classname, const std::string& description)
-    : Character(name), classname(classname), description(description) {}
+    : Character(name, 100, 0), classname(classname), description(description) {}
 
 void Class::addAvailableClasses(const Class& characterClass) {
     availableClasses.push_back(characterClass);
@@ -64,4 +64,5 @@ Class Class::createClass(const std::string& className) {
     }
     return Class("","Недоступный класс", "Описание отсутствует");
 }
+
 
