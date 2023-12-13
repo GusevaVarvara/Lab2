@@ -15,11 +15,10 @@ public:
     static void initializeAvailablePets();
     static Pet createPet(const std::string& petName);
 
-    int getFixedDamage() const;
 private:
-    int fixedDamage;
     std::string description;
     std::string name;
     std::string petname;
     static std::vector<Pet> availablePets;
 };
+
