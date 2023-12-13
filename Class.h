@@ -5,11 +5,10 @@
 
 class Class : public Character {
 public:
-    Class(const std::string& name, const std::string& classname, const std::string& description);
+    Class(const std::string& name, const std::string& description);
 
     void addAvailableClasses(const Class& characterClass);
 
-    const std::string& getName() const;
     const std::string& getDescription() const;
 
     static void initializeAvailableClasses();
@@ -18,7 +17,5 @@ public:
 
 private:
     static std::vector<Class> availableClasses;
-    std::string classname;
-    std::string name;
     std::string description;
 };
