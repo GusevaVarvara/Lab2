@@ -2,20 +2,22 @@
 
 #include <iostream>
 #include <string>
+#include "item.h" 
 
 class Character {
 public:
-    Character(const std::string& name, int initialHealth = 100);
-
-    virtual void displayInfo() const;
+    Character(const std::string& name, int health, int fixedDamage);
 
     virtual void takeDamage(int damage);
-    virtual void heal(int amount);
     int getHealth() const;
-    void setHealth(int newHealth);
+    int getDamage() const;
+    const std::string& getName() const;
+    void addItem(const Item& item);
 
 private:
     std::string name;
     int health;
+    int fixedDamage;
 };
+
 
