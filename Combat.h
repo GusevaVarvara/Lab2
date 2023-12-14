@@ -1,14 +1,14 @@
 #pragma once
 
-#include "character.h"
-#include "enemy.h"
-#include "pet.h"
-#include "player.h"
-#include "dice.h"
-#include "item.h"
-#include "weapon.h"
-#include "armor.h"
-#include "potion.h"
+#include "Character.h"
+#include "Enemy.h"
+#include "Pet.h"
+#include "Player.h"
+#include "Dice.h"
+#include "Item.h"
+#include "Weapon.h"
+#include "Armor.h"
+#include "Potion.h"
 
 class Combat {
 public:
