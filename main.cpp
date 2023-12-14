@@ -1,9 +1,10 @@
 #include <iostream>
 #include <locale>
-#include "race.h"
-#include "class.h"
-#include "enemy.h" 
-#include "pet.h" 
+#include "Player.h" 
+#include "Race.h"
+#include "Class.h"
+#include "Enemy.h" 
+#include "Pet.h" 
 #include "Combat.h" 
 
 
@@ -37,6 +38,8 @@ int main() {
     Pet::initializeAvailablePets();
     Enemy::initializeAvailableEnemies();
 
+    Player player("Игрок", 100, 0);
+
     std::cout << "Выберите расу, класс и питомца для вашего персонажа\n\n";
 
     displayAvailableOptions();
@@ -52,6 +55,12 @@ int main() {
     Race chosenRaceObj = Race::createRace(chosenRace);
     Class chosenClassObj = Class::createClass(chosenClass);
     Pet chosenPetObj = Pet::createPet(chosenPet);
+
+    while (chosenPetObj.getName() == "?") {
+        std::cout << "\nВыберите питомца из доступных\n";
+        std::cin >> chosenPet;
+        chosenPetObj = Pet::createPet(chosenPet);
+    }
 
     std::cout << "\nВаш персонаж:\n";
     std::cout << "Раса: " << chosenRaceObj.getName() << "\n";
@@ -72,18 +81,24 @@ int main() {
 
     Enemy chosenEnemyObj = Enemy::createEnemy(chosenEnemy);
 
+    while (chosenEnemyObj.getName() == "?") {
+        std::cout << "\nВыберите врага из доступных\n";
+        std::cin >> chosenEnemy;
+        chosenEnemyObj = Enemy::createEnemy(chosenEnemy);
+    }
+
     std::cout << "\nВаш враг: " << chosenEnemyObj.getName() << "\n" << chosenEnemyObj.getDescription() << "\n";
 
     std::vector<Character> players;
-    Character player1("Игрок");
-    players.push_back(player1);
+    players.push_back(player);
     players.push_back(chosenEnemyObj);
     players.push_back(chosenPetObj);
 
-    Combat combat(players, chosenEnemyObj, chosenPetObj);
-    TurnSystem turnSystem(players);
+    Combat combat(players);
 
+    std::cout << "\nБой начался!\n";
     combat.startCombat();
 
     return 0;
 }
+
