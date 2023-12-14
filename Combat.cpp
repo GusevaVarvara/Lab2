@@ -1,4 +1,4 @@
-#include "combat.h"
+#include "Combat.h"
 #include <iostream>
 
 Combat::Combat(std::vector<Character>& players)
