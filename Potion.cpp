@@ -1,4 +1,4 @@
-#include "potion.h"
+#include "Potion.h"
 
 std::vector<Potion> Potion::availablePotions;
 
