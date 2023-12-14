@@ -1,4 +1,4 @@
-#include "armor.h"
+#include "Armor.h"
 
 std::vector<Armor> Armor::availableArmors;
 
