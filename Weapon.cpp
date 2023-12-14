@@ -1,4 +1,4 @@
-#include "weapon.h"
+#include "Weapon.h"
 
 std::vector<Weapon> Weapon::availableWeapons;
 
