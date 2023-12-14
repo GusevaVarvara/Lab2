@@ -1,6 +1,6 @@
 #pragma once
 
-#include "item.h"
+#include "Item.h"
 #include <vector>
 
 class Armor : public Item {
