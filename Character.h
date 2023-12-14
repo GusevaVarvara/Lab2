@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include "item.h" 
+#include "Item.h" 
 
 class Character {
 public:
