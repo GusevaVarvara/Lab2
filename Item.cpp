@@ -1,4 +1,4 @@
-#include "item.h"
+#include "Item.h"
 
 Item::Item(const std::string& name, const std::string& description, int plusHealth, int plusDamage)
     : name(name), description(description), plusHealth(plusHealth), plusDamage(plusDamage) {}
