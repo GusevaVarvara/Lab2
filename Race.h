@@ -1,6 +1,6 @@
 #pragma once
 
-#include "character.h"
+#include "Character.h"
 #include <vector>
 
 class Race : public Character {
