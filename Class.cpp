@@ -1,4 +1,4 @@
-#include "class.h"
+#include "Class.h"
 
 std::vector<Class> Class::availableClasses;
 
