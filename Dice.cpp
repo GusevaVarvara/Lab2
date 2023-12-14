@@ -1,4 +1,4 @@
-#include "dice.h"
+#include "Dice.h"
 
 Dice::Dice() : seeded(false) {}
 
